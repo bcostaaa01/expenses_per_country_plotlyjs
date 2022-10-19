@@ -1,8 +1,13 @@
 #heading {
-    font-size: 46px;
-    font-family: 'Regular';
+  font-size: 46px;
+  font-family: "Regular";
+  text-align: center;
 }
 
 #paragraph {
-    font-family: 'Regular';
+  font-family: "Regular";
+}
+
+#graphColors {
+  text-align: center;
 }

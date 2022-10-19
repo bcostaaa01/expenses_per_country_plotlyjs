@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Radar Chart</title>
     <script src="https://cdn.plot.ly/plotly-2.16.0.min.js"></script>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
     <h1 id="heading">Radar Chart</h1>
+    <div id="graphColors">
+      <tr>
+        <td>
+          <img
+            src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-9/512/Stop-red-icon.png"
+            style="height: 10px"
+          />
+         
+          Germany
+        </td>
+        <td>
+          <img
+            src="http://www.clker.com/cliparts/F/x/C/T/d/f/green-square-hi.png"
+            style="height: 10px"
+          />
+          
+          Spain
+        </td>
+        <td>
+          <img
+            src="data:image/jpeg;base64,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"
+            style="height: 10px"
+          />
+          
+          Netherlands
+        </td>
+        <td>
+          <img
+            src="https://1001freedownloads.s3.amazonaws.com/vector/thumb/111093/blue.png"
+            style="height: 10px"
+          />
+          
+          Portugal
+        </td>
+      </tr>
+    </div>
     <div id="myChart"></div>
-    <p id="paragraph">An example of a radar chart built using the D3-based Plotly framework with data for salaries from different countries.</p>
+    <p id="paragraph">
+      An example of a radar chart built using the D3-based Plotly framework with
+      data for salaries from different countries.
+    </p>
     <script src="./chart.js"></script>
-</body>
+  </body>
 </html>
